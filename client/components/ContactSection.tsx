@@ -124,7 +124,7 @@ export function ContactSection() {
       if (response.ok) {
         setSubmitStatus("success");
         setSubmitMessage(
-          "Thank you for your message! I'll get back to you soon.",
+          "✅ Thank you! Your message has been sent successfully. I'll get back to you soon.",
         );
         setFormData({ name: "", email: "", subject: "", message: "" });
         setErrors({});
@@ -159,8 +159,8 @@ export function ContactSection() {
     {
       icon: MapPin,
       label: "Location",
-      value: "Dhule, Maharashtra, India",
-      href: "https://maps.google.com/maps?q=Dhule,+Maharashtra,+India",
+      value: "Pune, Maharashtra, India",
+      href: "https://maps.google.com/maps?q=Pune,+Maharashtra,+India",
       target: "_blank",
     },
   ];
@@ -169,30 +169,32 @@ export function ContactSection() {
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Get In <span className="gradient-text">Touch</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? Let's discuss how we
-            can work together.
-          </p>
+         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+  Let's <span className="gradient-text">Connect</span>
+</h2>
+
+<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+  I'm currently seeking full-time opportunities as a Java Full Stack
+  Developer. Feel free to reach out for job opportunities,
+  collaborations, or exciting software projects.
+</p> 
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div>
+            <div>  
               <h3 className="text-2xl font-semibold text-foreground mb-4">
                 Let's Connect
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                I'm always open to new roles, collaborations, or freelance
-                projects. Always happy to connect and discuss ideas in tech and
-                web development.
-                <br />
-                <br />
-                📍 Available for Remote or Hybrid Work
-              </p>
+  I'm currently seeking full-time opportunities as a Java Full Stack
+  Developer. Feel free to reach out for job opportunities,
+  collaborations, or exciting software projects.
+  <br />
+  <br />
+  🟢 Available for Full-Time • Remote • Hybrid Opportunities
+</p>
             </div>
 
             <div className="space-y-6">
@@ -296,12 +298,13 @@ export function ContactSection() {
           <div className="bg-card border border-border rounded-lg p-6 md:p-8 shadow-lg">
             <div className="mb-6">
               <h3 className="text-2xl font-semibold text-foreground mb-3">
-                Send a Message
-              </h3>
-              <p className="text-muted-foreground">
-                Fill out the form below and I'll get back to you as soon as
-                possible.
-              </p>
+  Let's Build Something Together 🚀
+</h3>
+
+<p className="text-muted-foreground">
+  Have a job opportunity, project, or collaboration in mind?
+  Send me a message and I'll get back to you soon.
+</p>
             </div>
 
             {/* Status Alert */}
@@ -347,7 +350,7 @@ export function ContactSection() {
                         ? "border-red-500 focus:border-red-500"
                         : "focus:border-primary"
                     }`}
-                    placeholder="Your full name"
+                    placeholder="Enter your full name"
                   />
                   {errors.name && (
                     <p className="text-sm text-red-500">{errors.name}</p>
@@ -366,7 +369,7 @@ export function ContactSection() {
                         ? "border-red-500 focus:border-red-500"
                         : "focus:border-primary"
                     }`}
-                    placeholder="your.email@example.com"
+                    placeholder="Enter your email address"
                   />
                   {errors.email && (
                     <p className="text-sm text-red-500">{errors.email}</p>
@@ -407,7 +410,7 @@ export function ContactSection() {
                       ? "border-red-500 focus:border-red-500"
                       : "focus:border-primary"
                   }`}
-                  placeholder="Tell me about your project or just say hello..."
+                  placeholder="Tell me about the opportunity, project, or collaboration..."
                 />
                 {errors.message && (
                   <p className="text-sm text-red-500">{errors.message}</p>
@@ -430,7 +433,7 @@ export function ContactSection() {
                 size="lg"
               >
                 <Send className="w-4 h-4 mr-2" />
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : "Send Message 🚀"}
               </Button>
             </form>
           </div>
