@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -97,51 +98,50 @@ export function ContactSection() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+  if (!validateForm()) return;
 
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
+  setIsSubmitting(true);
+  setSubmitStatus("idle");
 
-    try {
-      // Use Netlify Forms with proper encoding
-      const params = new URLSearchParams();
-      params.append("form-name", "contact");
-      params.append("name", formData.name);
-      params.append("email", formData.email);
-      params.append("subject", formData.subject);
-      params.append("message", formData.message);
+  try {
+    await emailjs.send(
+      "service_rrm789m",
+      "template_vdw8cgr",
+      {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      "5CLEgaym0VhE-3aUF"
+    );
 
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
-      });
+    setSubmitStatus("success");
+    setSubmitMessage(
+      "✅ Thank you! Your message has been sent successfully. I'll get back to you soon."
+    );
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setSubmitMessage(
-          "✅ Thank you! Your message has been sent successfully. I'll get back to you soon.",
-        );
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        setErrors({});
-      } else {
-        setSubmitStatus("error");
-        setSubmitMessage("Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setSubmitStatus("error");
-      setSubmitMessage(
-        "Failed to send message. Please check your connection and try again.",
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+
+    setErrors({});
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+
+    setSubmitStatus("error");
+    setSubmitMessage(
+      "❌ Failed to send message. Please try again."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const contactInfo = [
     {
@@ -330,12 +330,10 @@ export function ContactSection() {
             )}
 
             <form
-              onSubmit={handleSubmit}
-              className="space-y-6"
-              name="contact"
-              data-netlify="true"
-            >
-              <input type="hidden" name="form-name" value="contact" />
+  onSubmit={handleSubmit}
+  className="space-y-6"
+>
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name *</Label>
