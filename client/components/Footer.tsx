@@ -302,12 +302,12 @@ export function Footer() {
                   <div>
                     <p className="text-xs text-muted-foreground">Location</p>
                     <a
-                      href="https://maps.google.com/maps?q=Dhule,+Maharashtra,+India"
+                      href="https://www.google.com/maps/place/Pune,+Maharashtra"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-foreground hover:text-primary transition-colors duration-200"
                     >
-                      Dhule, Maharashtra, India
+                      Pune, Maharashtra, India
                     </a>
                   </div>
                 </div>
