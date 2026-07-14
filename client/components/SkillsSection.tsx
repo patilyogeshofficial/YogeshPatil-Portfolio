@@ -24,108 +24,84 @@ export function SkillsSection() {
   }, []);
 
   const skillCategories = [
-    {
-      title: "Programming",
-      icon: Code,
-      color: "from-primary to-primary/80",
-      skills: [
-        {
-          name: "Java",
-          level: 85,
-          color: "bg-gradient-to-r from-primary to-primary/70",
-        },
-        {
-          name: "Python",
-          level: 80,
-          color: "bg-gradient-to-r from-primary/90 to-primary/60",
-        },
-        {
-          name: "JavaScript",
-          level: 85,
-          color: "bg-gradient-to-r from-primary/80 to-primary/50",
-        },
-        {
-          name: "PHP",
-          level: 75,
-          color: "bg-gradient-to-r from-primary/70 to-primary/40",
-        },
-        {
-          name: "SQL",
-          level: 80,
-          color: "bg-gradient-to-r from-primary/85 to-primary/55",
-        },
-      ],
-    },
-    {
-      title: "Web Development",
-      icon: Monitor,
-      color: "from-primary/90 to-primary/70",
-      skills: [
-        {
-          name: "HTML5/CSS3",
-          level: 90,
-          color: "bg-gradient-to-r from-primary to-primary/60",
-        },
-        {
-          name: "JavaScript",
-          level: 85,
-          color: "bg-gradient-to-r from-primary/80 to-primary/50",
-        },
-        {
-          name: "PHP",
-          level: 75,
-          color: "bg-gradient-to-r from-primary/70 to-primary/40",
-        },
-        {
-          name: "Flask",
-          level: 70,
-          color: "bg-gradient-to-r from-primary/75 to-primary/45",
-        },
-        {
-          name: "Chart.js",
-          level: 65,
-          color: "bg-gradient-to-r from-primary/65 to-primary/35",
-        },
-      ],
-    },
-    {
-      title: "Tools & Platforms",
-      icon: Database,
-      color: "from-primary/80 to-primary/60",
-      skills: [
-        {
-          name: "VS Code",
-          level: 90,
-          color: "bg-gradient-to-r from-primary to-primary/60",
-        },
-        {
-          name: "Git/GitHub",
-          level: 85,
-          color: "bg-gradient-to-r from-primary/85 to-primary/55",
-        },
-        {
-          name: "SQLite",
-          level: 80,
-          color: "bg-gradient-to-r from-primary/80 to-primary/50",
-        },
-        {
-          name: "Linux",
-          level: 75,
-          color: "bg-gradient-to-r from-primary/75 to-primary/45",
-        },
-        {
-          name: "Windows",
-          level: 95,
-          color: "bg-gradient-to-r from-primary/95 to-primary/65",
-        },
-        {
-          name: "macOS",
-          level: 70,
-          color: "bg-gradient-to-r from-primary/70 to-primary/40",
-        },
-      ],
-    },
-  ];
+  {
+    title: "Programming Languages",
+    icon: Code,
+    color: "from-primary to-primary/80",
+    skills: [
+      { name: "Java", level: 70, color: "bg-gradient-to-r from-primary to-primary/70" },
+      { name: "JavaScript", level: 65, color: "bg-gradient-to-r from-primary/90 to-primary/60" },
+      { name: "Python (Basics)", level: 50, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+    ],
+  },
+
+  {
+    title: "Web Technologies",
+    icon: Monitor,
+    color: "from-primary/90 to-primary/70",
+    skills: [
+      { name: "HTML5", level: 90, color: "bg-gradient-to-r from-primary to-primary/60" },
+      { name: "CSS3", level: 85, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+      { name: "Bootstrap", level: 85, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+      { name: "Tailwind CSS", level: 60, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+      { name: "React.js", level: 60, color: "bg-gradient-to-r from-primary/70 to-primary/40" },
+    ],
+  },
+
+  {
+    title: "Backend",
+    icon: Database,
+    color: "from-primary/80 to-primary/60",
+    skills: [
+      { name: "Spring Boot", level: 60, color: "bg-gradient-to-r from-primary to-primary/60" },
+      { name: "JDBC", level: 60, color: "bg-gradient-to-r from-primary/85 to-primary/55" },
+      { name: "REST APIs", level: 60, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+      { name: "MVC Architecture", level: 60, color: "bg-gradient-to-r from-primary/75 to-primary/45" },
+    ],
+  },
+
+  {
+    title: "Database",
+    icon: Database,
+    color: "from-primary/80 to-primary/60",
+    skills: [
+      { name: "SQL", level: 90, color: "bg-gradient-to-r from-primary to-primary/60" },
+      { name: "MySQL", level: 90, color: "bg-gradient-to-r from-primary/85 to-primary/55" },
+      { name: "SQLite", level: 80, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+    ],
+  },
+
+  {
+    title: "Software Testing",
+    icon: Zap,
+    color: "from-primary to-primary/80",
+    skills: [
+      { name: "Manual Testing", level: 85, color: "bg-gradient-to-r from-primary to-primary/70" },
+      { name: "SDLC", level: 90, color: "bg-gradient-to-r from-primary/90 to-primary/60" },
+      { name: "STLC", level: 85, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+      { name: "Test Case Design", level: 85, color: "bg-gradient-to-r from-primary/75 to-primary/45" },
+      { name: "Functional Testing", level: 85, color: "bg-gradient-to-r from-primary/70 to-primary/40" },
+      { name: "Regression Testing", level: 80, color: "bg-gradient-to-r from-primary/65 to-primary/35" },
+      { name: "Smoke Testing", level: 80, color: "bg-gradient-to-r from-primary/65 to-primary/35" },
+      { name: "Defect Life Cycle", level: 80, color: "bg-gradient-to-r from-primary/65 to-primary/35" },
+    ],
+  },
+
+  {
+    title: "Tools",
+    icon: Monitor,
+    color: "from-primary/90 to-primary/70",
+    skills: [
+      { name: "Git", level: 85, color: "bg-gradient-to-r from-primary to-primary/60" },
+      { name: "GitHub", level: 85, color: "bg-gradient-to-r from-primary/85 to-primary/55" },
+      { name: "Postman", level: 60, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+      { name: "Maven", level: 60, color: "bg-gradient-to-r from-primary/75 to-primary/45" },
+      { name: "VS Code", level: 90, color: "bg-gradient-to-r from-primary/95 to-primary/65" },
+      { name: "IntelliJ IDEA", level: 60, color: "bg-gradient-to-r from-primary/80 to-primary/50" },
+      { name: "NetBeans", level: 60, color: "bg-gradient-to-r from-primary/75 to-primary/45" },
+    ],
+  },
+];
 
   // Animation variants
   const containerVariants = {
@@ -306,8 +282,7 @@ export function SkillsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Here are the technologies and tools I work with to bring ideas to
-            life
+            Technical skills gained through Java Full Stack Development, Manual Testing, and real-world academic projects.
           </motion.p>
         </motion.div>
 
@@ -465,9 +440,12 @@ export function SkillsSection() {
           >
             <Star className="w-5 h-5 text-primary" />
             <span className="text-primary font-medium">
-              {skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0)}{" "}
-              Skills Mastered
-            </span>
+  Always Learning • Always Building 🚀
+</span>
+{/* <span className="text-primary font-medium">
+  {skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0)}{" "}
+  Skills Mastered
+</span> */}
           </motion.div>
         </motion.div>
       </div>
