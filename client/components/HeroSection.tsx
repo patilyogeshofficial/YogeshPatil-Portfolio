@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
   const typewriterPhrases = [
-    "Final-year B.Tech CSE Student",
+    "Final-year Computer Engineering Student",
     "Full Stack Developer",
+    "Spring Boot & React Developer",
+    "Software Engineer Aspirant"
   ];
 
   // Animation variants
@@ -136,23 +138,46 @@ export function HeroSection() {
             variants={textVariants}
           >
             <div className="space-y-4">
-              <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Hi, I am
-                <br />
-                <motion.span
-                  className="gradient-text"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                >
-                  Yogesh Patil
-                </motion.span>
-              </motion.h1>
+
+  {/* Available Badge */}
+
+  <motion.div
+
+    initial={{ opacity: 0 }}
+
+    animate={{ opacity: 1 }}
+
+    transition={{ delay: 0.1 }}
+
+  >
+
+    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-sm font-medium border border-green-500/20">
+
+      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+
+      Available for Full-Time Opportunities
+
+    </span>
+
+  </motion.div>
+
+  <motion.h1
+
+    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
+
+  >
+
+    Hi, I'm
+
+    <br />
+
+    <motion.span className="gradient-text">
+
+      Yogesh Patil
+
+    </motion.span>
+
+  </motion.h1>
               <motion.p
                 className="text-lg sm:text-xl md:text-2xl text-muted-foreground min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem]"
                 initial={{ opacity: 0, y: 30 }}
@@ -171,46 +196,97 @@ export function HeroSection() {
             </div>
 
             <motion.p
-              className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              Final-year B.Tech Computer Engineering student seeking
-              opportunities to apply programming and database skills, contribute
-              to real-world projects, and grow as a software or web developer.
-              With a passion for learning and hands-on experience in web
-              development, I am ready to make a meaningful contribution to
-              innovative projects.
-            </motion.p>
+  className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.9 }}
+>
+  Passionate Java Full Stack Developer and final-year Computer Engineering student with hands-on experience in Java, Spring Boot, SQL, React, and REST APIs. I enjoy building scalable web applications and solving real-world problems.
+</motion.p>
+<motion.div
 
-            <motion.div
-              className="pt-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                  asChild
-                >
-                  <a
-                    href="https://cdn.builder.io/o/assets%2F3546de7d0bc94d888bb9d8ba3ad90d82%2Fc2a90cb5cd4b425ba43f32cfecb12ca9?alt=media&token=f63befcd-1572-408b-b488-a66d7ca55af5&apiKey=3546de7d0bc94d888bb9d8ba3ad90d82"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download="Yogesh_Patil_Resume.pdf"
-                  >
-                    Download Resume
-                  </a>
-                </Button>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+  className="flex items-center justify-center lg:justify-start gap-2 text-muted-foreground"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.95 }}
+>
+  <span className="flex items-center gap-1">
+    📍 Pune, Maharashtra
+  </span>
+  <span className="text-primary/60">•</span>
+  <span className="flex items-center gap-1">
+    🎓 Final Year B.Tech
+  </span>
+  <span className="text-primary/60">•</span>
+  <span className="flex items-center gap-1">
+    💼 Open to Work
+  </span>
+</motion.div>
+
+{/* Tech Stack */}
+<motion.div
+  className="flex flex-wrap gap-3 justify-center lg:justify-start pt-2"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 1 }}
+>
+  {[
+    "Java",
+    "Spring Boot",
+    "SQL",
+    "MySQL",
+    "React",
+    "REST APIs",
+    "Git",
+  ].map((skill) => (
+    <span
+      key={skill}
+      className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20"
+    >
+      {skill}
+    </span>
+  ))}
+</motion.div>
+
+<motion.div
+  className="pt-4"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 1.1 }}
+>
+  <motion.div
+    className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+  >
+  {/* Download Resume */}
+  <Button
+    size="lg"
+    className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+    asChild
+  >
+    <a
+      href="/Yogesh_Patil_Resume_2025%20(2).pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      download
+    >
+      Download Resume
+    </a>
+  </Button>
+
+  {/* View Projects */}
+  <Button
+    variant="outline"
+    size="lg"
+    className="px-6 sm:px-8 py-3 text-base sm:text-lg rounded-full"
+    asChild
+  >
+    <a href="#projects">
+      View Projects
+    </a>
+  </Button>
+</motion.div>
+</motion.div>
+</motion.div>
 
           {/* Profile Image with Enhanced Animations */}
           <motion.div
