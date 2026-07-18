@@ -14,13 +14,15 @@ export default function Index() {
       <section id="home">
         <HeroSection />
       </section>
+
       <SkillsSection />
+      <ProjectsSection />
       <ExperienceSection />
+      <EducationSection />
       <CertificationsSection />
       <AchievementsSection />
-      <ProjectsSection />
-      <EducationSection />
       <ContactSection />
+
       <Footer />
     </div>
   );
