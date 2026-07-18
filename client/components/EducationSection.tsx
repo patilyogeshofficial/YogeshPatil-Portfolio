@@ -35,10 +35,10 @@ export function EducationSection() {
       degree: "B.Tech in Computer Engineering",
       institution: "SSVPS B.S. Deore College of Engineering, Dhule",
       location: "Dhule, India",
-      duration: "Aug 2022 - May 2026",
-      grade: "7.0 CGPA (Till 6th Semester)",
+      duration: "2022 - 2026",
+      grade: "7.0 CGPA (Till 7th Semester)",
       description:
-        "Currently pursuing Computer Engineering with focus on software development, web technologies, and database applications. Active participant in coding contests and technical projects.",
+      "Pursuing B.Tech in Computer Engineering with a strong interest in Java Full Stack Development, backend engineering, REST APIs, Spring Boot, React, and scalable web applications.",
       achievements: [
         "Selected as Reliance Foundation Scholar (2022–2026)",
         "Finalist in inter-college project competition",
@@ -66,7 +66,7 @@ export function EducationSection() {
       achievements: [
         "Strong performance in Science subjects",
         "Active participation in college technical events",
-        "Developed interest in programming and web development",
+
       ],
       courses: [
         "Physics",
@@ -88,16 +88,9 @@ export function EducationSection() {
       achievements: [
         "Achieved 83.6% marks with distinction",
         "Strong performance in Mathematics and Science",
-        "Active participation in school events and competitions",
-        "Developed foundational knowledge in computer science",
+        "Active participation in school events and competitions"
       ],
       courses: [
-        "Marathi",
-        "English",
-        "Hindi",
-        "Mathematics",
-        "Science",
-        "Social Studies",
       ],
     },
   ];

@@ -42,7 +42,7 @@ export function ThemeToggle() {
     <Button
       onClick={toggleTheme}
       size="lg"
-      className="fixed bottom-4 right-4 z-[60] w-10 h-10 sm:w-14 sm:h-14 rounded-full backdrop-blur-md border transition-all duration-500 shadow-lg hover:shadow-xl group bg-white/90 border-gray-300 hover:bg-blue-50/90 hover:border-blue-400/50 toggle-bg-responsive"
+      className="fixed bottom-8 left-8 z-[60] w-10 h-10 sm:w-14 sm:h-14 rounded-full backdrop-blur-md border transition-all duration-500 shadow-lg hover:shadow-xl group bg-white/90 border-gray-300 hover:bg-blue-50/90 hover:border-blue-400/50 toggle-bg-responsive"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       <div className="relative w-5 h-5 sm:w-8 sm:h-8 flex items-center justify-center">

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function HeroSection() {
   const typewriterPhrases = [
     "Final-year Computer Engineering Student",
-    "Full Stack Developer",
+    "Java Full Stack Developer",
     "Spring Boot & React Developer",
     "Software Engineer Aspirant"
   ];

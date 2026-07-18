@@ -20,10 +20,11 @@ export function Footer() {
   };
 
   const quickLinks = [
-    { label: "About", href: "#home" },
+    { label: "Home", href: "#home" },
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
+    { label: "Education", href: "#education" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -55,6 +56,7 @@ export function Footer() {
         </svg>
       ),
     },
+    
     {
       name: "Email",
       href: "mailto:patilyogeshofficial@gmail.com",
@@ -192,7 +194,7 @@ export function Footer() {
                 <h3 className="text-xl font-bold text-foreground">
                   Yogesh Patil
                 </h3>
-                <p className="text-sm text-primary">Software Developer</p>
+                <p className="text-sm text-primary">Java Full Stack Developer</p>
               </div>
             </motion.div>
 
@@ -200,9 +202,11 @@ export function Footer() {
               className="text-muted-foreground leading-relaxed"
               variants={itemVariants}
             >
-              Final-year B.Tech Computer Engineering student passionate about
-              web development and solving real-world problems through code.
+              Final-year Computer Engineering student passionate about Java Full Stack Development using Spring Boot, React, SQL, and REST APIs. Actively seeking Software Developer opportunities to build scalable applications and solve real-world problems.
             </motion.p>
+            <div className="inline-flex mt-3 px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 text-sm font-medium">
+  🟢 Open to Full-Time Opportunities
+</div>
 
             <motion.div className="flex space-x-3" variants={containerVariants}>
               {socialLinks.map((social, index) => (
@@ -354,28 +358,11 @@ export function Footer() {
                 ☕
               </motion.div>
             </motion.div>
+            <div className="text-xs text-muted-foreground mt-1">
+  Built with React • TypeScript • Tailwind CSS • Framer Motion
+</div>
 
-            <motion.div
-              className="flex space-x-6 text-sm"
-              variants={containerVariants}
-            >
-              <motion.a
-                href="/privacy-policy"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                variants={itemVariants}
-                whileHover={{ y: -1 }}
-              >
-                Privacy Policy
-              </motion.a>
-              <motion.a
-                href="/terms-of-service"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                variants={itemVariants}
-                whileHover={{ y: -1 }}
-              >
-                Terms of Service
-              </motion.a>
-            </motion.div>
+            
           </div>
         </motion.div>
       </motion.div>
@@ -383,13 +370,14 @@ export function Footer() {
       {/* Scroll to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 left-8 w-12 h-12 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center z-40"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center z-40"
         initial={{ opacity: 0, scale: 0 }}
         animate={{
           opacity: showScrollTop ? 1 : 0,
           scale: showScrollTop ? 1 : 0,
         }}
         whileHover={{
+rotate:8,
           scale: 1.1,
           transition: { duration: 0.2 },
         }}
