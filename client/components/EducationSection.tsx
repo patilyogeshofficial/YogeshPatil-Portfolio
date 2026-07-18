@@ -32,65 +32,63 @@ export function EducationSection() {
 
   const education = [
     {
-      degree: "B.Tech in Computer Engineering",
-      institution: "SSVPS B.S. Deore College of Engineering, Dhule",
-      location: "Dhule, India",
+      degree: "Bachelor of Technology (B.Tech) – Computer Engineering",
+      institution: "SSVPS’s Bapusaheb Shivajirao Deore College of Engineering, Dhule",
+      university: "Affiliated to Dr. Babasaheb Ambedkar Technological University (DBATU), Lonere",
+      location: "Dhule, Maharashtra, India",
       duration: "2022 - 2026",
       grade: "7.0 CGPA (Till 7th Semester)",
+      status: "🎓 Final Year Student",
+      
       description:
-      "Pursuing B.Tech in Computer Engineering with a strong interest in Java Full Stack Development, backend engineering, REST APIs, Spring Boot, React, and scalable web applications.",
+      "Pursuing a Bachelor’s degree in Computer Engineering with a strong focus on Java Full Stack Development, Spring Boot, React, SQL, REST APIs, and scalable web application development.",
       achievements: [
-        "Selected as Reliance Foundation Scholar (2022–2026)",
+        "Reliance Foundation Undergraduate Scholar (2022–2026)",
         "Finalist in inter-college project competition",
+        "Completed Java Full Stack Development training at Qspiders/Jspiders",
         "Participated consistently in coding contests and tech quizzes",
         "Completed internship at CodeClause as Web Development Intern",
       ],
       courses: [
+        "Java Programming",
+        "Spring Boot & RESTful APIs",
+        "React.js & Frontend Development",
+        "SQL & Database Management",
         "Data Structures & Algorithms",
         "Database Management Systems",
         "Software Engineering",
-        "Web Technologies",
         "Computer Networks",
         "Operating Systems",
-        "More",
       ],
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
       institution: "Pratap College, Amalner",
-      location: "Amalner, India",
+      location: "Amalner, Maharashtra, India",
       duration: "2022",
       grade: "70.5%",
       description:
         "Completed higher secondary education with focus on Science stream, building strong foundation in mathematics and computer science.",
       achievements: [
-        "Strong performance in Science subjects",
-        "Active participation in college technical events",
-
       ],
       courses: [
         "Physics",
         "Chemistry",
         "Mathematics",
         "Biology",
-        "Marathi",
-        "English",
       ],
     },
     {
       degree: "Secondary School Certificate (SSC)",
       institution: "G S High School, Amalner",
-      location: "Amalner, India",
+      location: "Amalner, Maharashtra, India",
       duration: "2020",
       grade: "83.6%",
       description:
         "Completed secondary education with excellent performance, establishing strong academic foundation across core subjects.",
-      achievements: [
-        "Achieved 83.6% marks with distinction",
-        "Strong performance in Mathematics and Science",
-        "Active participation in school events and competitions"
-      ],
+      achievements: [],
       courses: [
+        
       ],
     },
   ];
@@ -119,6 +117,8 @@ export function EducationSection() {
       description: "Database management and querying fundamentals",
     },
   ];
+
+
 
   // Animation variants
   const containerVariants = {
@@ -296,7 +296,7 @@ export function EducationSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            My academic background and continuous learning journey
+            Building a strong foundation in Computer Engineering, software development, and modern web technologies.
           </motion.p>
         </motion.div>
 
@@ -354,9 +354,15 @@ export function EducationSection() {
                       <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
                         {edu.degree}
                       </h3>
-                      <p className="text-primary font-semibold text-lg">
-                        {edu.institution}
-                      </p>
+                      <p className="text-foreground font-semibold text-lg">
+  {edu.institution}
+</p>
+
+{edu.university && (
+  <p className="text-sm text-muted-foreground mt-1">
+    {edu.university}
+  </p>
+)}
                     </div>
                   </motion.div>
 
@@ -389,6 +395,13 @@ export function EducationSection() {
                       <span className="text-foreground font-bold">
                         {edu.grade}
                       </span>
+                      {edu.status && (
+  <div className="mt-3">
+    <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold">
+      {edu.status}
+    </span>
+  </div>
+)}
                     </motion.div>
                   </motion.div>
                 </div>
@@ -406,77 +419,83 @@ export function EducationSection() {
                   </motion.p>
 
                   {/* Enhanced Achievements */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
-                    <h4 className="text-foreground font-bold mb-4 text-lg">
-                      Key Achievements:
-                    </h4>
-                    <ul className="space-y-3">
-                      {edu.achievements.map((achievement, achievementIndex) => (
-                        <motion.li
-                          key={achievementIndex}
-                          variants={achievementVariants}
-                          initial="hidden"
-                          whileInView="visible"
-                          transition={{ delay: achievementIndex * 0.1 }}
-                          viewport={{ once: true }}
-                          className="text-muted-foreground flex items-start group/item"
-                        >
-                          <motion.div
-                            className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0"
-                            whileHover={{ scale: 1.3 }}
-                            transition={{ duration: 0.2 }}
-                          />
-                          <span className="group-hover/item:text-foreground transition-colors duration-200">
-                            {achievement}
-                          </span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </motion.div>
+                  {edu.achievements.length > 0 && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.4 }}
+    viewport={{ once: true }}
+  >
+    <h4 className="text-foreground font-bold mb-4 text-lg">
+      Key Highlights
+    </h4>
+
+    <ul className="space-y-3">
+      {edu.achievements.map((achievement, achievementIndex) => (
+        <motion.li
+          key={achievementIndex}
+          variants={achievementVariants}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: achievementIndex * 0.1 }}
+          viewport={{ once: true }}
+          className="text-muted-foreground flex items-start group/item"
+        >
+          <motion.div
+            className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0"
+            whileHover={{ scale: 1.3 }}
+          />
+          <span className="group-hover/item:text-foreground transition-colors duration-200">
+            {achievement}
+          </span>
+        </motion.li>
+      ))}
+    </ul>
+  </motion.div>
+)}
 
                   {/* Enhanced Relevant Courses */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <h4 className="text-foreground font-bold mb-4 text-lg">
-                      Relevant Coursework:
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {edu.courses.map((course, courseIndex) => (
-                        <motion.span
-                          key={courseIndex}
-                          variants={courseVariants}
-                          initial="hidden"
-                          whileInView="visible"
-                          transition={{ delay: courseIndex * 0.05 }}
-                          viewport={{ once: true }}
-                          whileHover={{
-                            scale: 1.05,
-                            boxShadow: "0 4px 12px rgba(168, 85, 247, 0.3)",
-                          }}
-                          className="px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full border border-primary/20 hover:bg-primary/20 transition-all duration-200 cursor-default"
-                        >
-                          {course}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
+                {edu.courses.length > 0 && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.5 }}
+    viewport={{ once: true }}
+  >
+    <h4 className="text-foreground font-bold mb-4 text-lg">
+      Core Subjects
+    </h4>
+
+    <div className="flex flex-wrap gap-3">
+      {edu.courses.map((course, courseIndex) => (
+        <motion.span
+          key={courseIndex}
+          variants={courseVariants}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: courseIndex * 0.05 }}
+          viewport={{ once: true }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: "0 4px 12px rgba(168, 85, 247, 0.3)",
+          }}
+          className="px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full border border-primary/20 hover:bg-primary/20 transition-all duration-200 cursor-default"
+        >
+          {course}
+        </motion.span>
+      ))}
+    </div>
+  </motion.div>
+)}  
+                  
+                </div> {/* End Right Column */}
+              </div> {/* End Grid */}
             </motion.div>
           ))}
         </motion.div>
-
         {/* Enhanced Additional Education */}
-        <motion.div
+        {false && (
+          <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -606,7 +625,8 @@ export function EducationSection() {
               </motion.div>
             ))}
           </motion.div>
-        </motion.div>
+        </motion.div> 
+        )}
 
         {/* Education Summary */}
         <motion.div
@@ -623,7 +643,7 @@ export function EducationSection() {
           >
             <GraduationCap className="w-6 h-6 text-primary" />
             <span className="text-primary font-bold text-lg">
-              Continuous Learning Journey
+              Continuous Learning • Always Improving
             </span>
             <div className="flex space-x-1">
               {[...Array(3)].map((_, i) => (
