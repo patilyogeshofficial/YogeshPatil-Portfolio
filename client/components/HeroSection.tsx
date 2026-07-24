@@ -155,7 +155,7 @@ export function HeroSection() {
 
       <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
 
-      Available for Full-Time Opportunities
+      Open for Full-Time Opportunities
 
     </span>
 
@@ -336,7 +336,7 @@ export function HeroSection() {
                 transition={{ duration: 0.3 }}
               >
                 <motion.img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F3546de7d0bc94d888bb9d8ba3ad90d82%2F2f2665dd51094329b48c55c37e4ac1c7?format=webp&width=800"
+                  src="/profile.jpg"
                   alt="Yogesh Patil"
                   className="w-full h-full object-cover"
                   initial={{ scale: 1.1 }}
